@@ -62,34 +62,36 @@
     font-family: 'Fira Sans';
     font-weight: 100;
     line-height: 2;
-    height: 80vh;
+    max-height: 80vh;
     color: #00ffc4;
     display: grid;
-    grid-template-rows: 0.1fr auto 0.3fr 0.3fr 0.1fr;
+    grid-template-rows: 1fr auto 1fr 1.5fr;
   }
   #selection-wrapper {
     grid-column: 2;
-    grid-row: 2;
-    display: grid;
-    grid-template-rows: auto 0.1fr auto;
-    align-content: space-between;
-  }
-  #tableDiv {
-    grid-column: 4;
     grid-row: 2;
     background-color: #090c16;
     font-family: 'Overpass Mono', monospace;
     font-size: calc(10px + 1vw);
     font-weight: 100;
   }
+  #tableDiv {
+    grid-column: 4;
+    grid-row: 2;
+    background-color: #090c16;
+  }
   #table-wrapper {
-    padding: 2rem;
+    padding: 0.5rem 1rem 1rem 1rem;
+    grid-row: 2;
+    background-color: #090c16;
+    text-align: -webkit-center;
   }
   #typeWrapper {
     grid-row: 1;
   }
   #CRWrapper {
-    grid-row: 3;
+    display: grid;
+    grid-template-rows: 1fr auto;
   }
   .section-title {
     font-family: 'IBM Plex Sans Condensed', sans-serif;
@@ -104,12 +106,10 @@
     margin: 0;
   }
   .input-wrapper {
-    margin: 0 auto;
+    grid-row: 2;
     background-color: #090c16;
-    min-height: 18vh;
     display: grid;
-    grid-template-columns: 0.1fr auto auto 0.1fr;
-    grid-template-rows: 0.5fr auto 0.5fr;
+    grid-template-rows: 1fr 2fr 1fr;
   }
   .centering-input-wrapper {
     grid-column: 1 / -1;
@@ -117,14 +117,18 @@
     justify-self: center;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    min-height: 18vh;
+    align-items: center;
   }
   .input-div {
     font-family: 'Fira Sans Extra Condensed', sans-serif;
     font-weight: 200;
     font-size: calc(12px + 0.8vw);
     color: #c78fef;
-    padding: 0 2rem 0 2rem;
+    padding: 1rem 2rem 1rem 2rem;
     text-align: justify;
+    align-self: center;
   }
   .navBtn {
     grid-row: 4;
@@ -142,6 +146,29 @@
     border: 2px solid #c78fef;
     color: #c78fef;
     background: #000;
+  }
+  table {
+    border-collapse: collapse;
+    border: 1px solid #fff;
+    font-family: 'Share Tech Mono';
+    font-weight: 100;
+  }
+  thead {
+    font-size: 1.5rem;
+    font-family: 'Fira Sans Extra Condensed';
+    background: #000;
+  }
+  tbody {
+    font-size: 0.8rem;
+    font-weight: 100;
+    background-color: #2f3137;
+    color: #fff;
+    font-family: 'Share Tech Mono';
+  }
+  td {
+    padding: 0.2rem 1rem 0.1rem 1rem;
+    text-align: right;
+    border: 1px solid #666;
   }
 </style>
 
@@ -173,7 +200,70 @@
         table title goes here
       </div>
       <div id="table-content">
-        table goes here
+        <table>
+	        <thead>
+              <tr>
+              <td>one</td>
+              <td>two</td>
+              <td>three</td><td>four</td></tr>
+            </thead>
+          <tbody>
+            <tr>
+              <td>dat1</td>
+              <td>dat2</td>
+              <td>dat3</td>
+              <td>dat4</td>
+            </tr>
+            <tr>
+              <td>dat1</td>
+              <td>dat2</td>
+              <td>dat3</td>
+              <td>dat4</td>
+            </tr>
+            <tr>
+              <td>dat1</td>
+              <td>dat2</td>
+              <td>dat3</td>
+              <td>dat4</td>
+            </tr>
+            <tr>
+              <td>dat1</td>
+              <td>dat2</td>
+              <td>dat3</td>
+              <td>dat4</td>
+            </tr>
+            <tr>
+              <td>dat1</td>
+              <td>dat2</td>
+              <td>dat3</td>
+              <td>dat4</td>
+            </tr>
+            <tr>
+              <td>dat1</td>
+              <td>dat2</td>
+              <td>dat3</td>
+              <td>dat4</td>
+            </tr>
+            <tr>
+              <td>dat1</td>
+              <td>dat2</td>
+              <td>dat3</td>
+              <td>dat4</td>
+            </tr>
+            <tr>
+              <td>dat1</td>
+              <td>dat2</td>
+              <td>dat3</td>
+              <td>dat4</td>
+            </tr>
+            <tr>
+              <td>dat1</td>
+              <td>dat2</td>
+              <td>dat3</td>
+              <td>dat4</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
