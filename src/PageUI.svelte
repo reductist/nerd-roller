@@ -1,25 +1,37 @@
 <script>
-  import LootTables from './LootTables.svelte'
+  import ItemTable from './ItemTable.svelte';
   import {
-    individualTreasureTables,
     hoardTreasureTables,
     hoardCoinsTables
   } from './treasureData.js'
 
+  let selectedCR;  // user selection bound to this variable
+
   let CRMenu = [
-    { id: 1, selected: false, choice: 'CR 0-4' },
-    { id: 2, selected: false, choice: 'CR 5-10' },
-    { id: 3, selected: false, choice: 'CR 11-16' },
-    { id: 4, selected: false, choice: 'CR 17+' },
+    { id: 1, choice: 'CR 0-4', value: '0_4' },
+    { id: 2, choice: 'CR 5-10', value: '5_10' },
+    { id: 3, choice: 'CR 11-16', value: '11_16' },
+    { id: 4, choice: 'CR 17+', value: '17' },
   ];
 
   // suuuuper basic routing state & handler functions
   let pageloadUI = true;
   let rollForm = false;
+  let alertDialog = false;
 
   function proceedToTableSelection() {
-    pageloadUI = false;
-    rollForm = true;
+    if (selectedCR) {
+      pageloadUI = false;
+      rollForm = true;
+      console.log(getCrCoins(selectedCR));
+      console.log(getCrItems(selectedCR));
+    } else {
+      alertDialog = true;
+    }
+  }
+
+  function closeDialog() {
+    alertDialog = false;
   }
 
   function backToPageloadUI() {
@@ -27,32 +39,15 @@
     pageloadUI = true;
   }
 
-  // slice a provided table.data[0][0] for the first 2 and last 2 characters, and cast the result to an int.
-  // ex: getLow(tableA.data[0][0])  //95
-  let getLow = (str) => Number(str.slice(0, 2));
-  let getHigh = (str) => Number(str.slice(3, 5));
-
-  // initialize empty variables for user input binding
-  let typeChoice = false;
-  let crChoice = false;
-
   // helper functions to extract table letter identifier (last letter in string, ex; table _A_)
-  const extractTableLetter = (str) => str.charAt(str.length - 1)
-  const prependObjString = (tblLetter) => `itemTable${tblLetter}`;
-
-  // return table variable based on table string identifier
-  function returnTableType(type) {
-    // type === (individual || hoard)
-    if (type === 'Individual') {
-      typeChoice = 'individual';
-      return individualTreasureTables;
-    } else if (type === 'Hoard') {
-      typeChoice = 'hoard';
-      return hoardTreasureTables;
-    } else {
-      typeChoice = false;
-      return;
-    }
+  const prependItemString = (cr) => `hoardTreasure${cr}`;
+  const prependCoinString = (cr) => `coins${cr}`;
+  // return table identifier from user's radio button selection
+  function getCrCoins(cr) {
+    return hoardCoinsTables.coinHoard[prependCoinString(cr)];
+  }
+  function getCrItems(cr) {
+    return hoardTreasureTables[prependItemString(cr)];
   }
 </script>
 
@@ -74,6 +69,9 @@
     font-family: 'Overpass Mono', monospace;
     font-size: calc(10px + 1vw);
     font-weight: 100;
+    width: fit-content;
+    min-width: 25vw;
+    justify-self: center;
   }
   #tableDiv {
     grid-column: 4;
@@ -115,9 +113,6 @@
     grid-column: 1 / -1;
     grid-row: 2;
     justify-self: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
     min-height: 18vh;
     align-items: center;
   }
@@ -129,6 +124,40 @@
     padding: 1rem 2rem 1rem 2rem;
     text-align: justify;
     align-self: center;
+  }
+  #crForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .radio-wrap {
+    display: block;
+    text-align: justify;
+    margin: 0 auto;
+  }
+  .radioInput2 {
+    grid-column: 1;
+    grid-row: 1;
+    display: inline-block;
+    padding: 1rem 1rem 1rem 0.5rem;
+  }
+  .radioInput3 {
+    grid-column: 2;
+    grid-row: 1;
+    display: inline-block;
+    padding: 1rem 1rem 1rem 0.5rem;
+  }
+  .radioInput4 {
+    grid-column: 1;
+    grid-row: 2;
+    display: inline-block;
+    padding: 1rem 1rem 1rem 0.5rem;
+  }
+  .radioInput5 {
+    grid-column: 2;
+    grid-row: 2;
+    display: inline-block;
+    padding: 1rem 1rem 1rem 0.5rem;
   }
   .navBtn {
     grid-row: 4;
@@ -146,6 +175,10 @@
     border: 2px solid #c78fef;
     color: #c78fef;
     background: #000;
+  }
+  #backToPageload {
+    margin: 0 auto;
+    text-align: center;
   }
   table {
     border-collapse: collapse;
@@ -170,29 +203,57 @@
     text-align: right;
     border: 1px solid #666;
   }
+  .alert-dialog {
+    position: absolute;
+    left: 30%;
+    top: 63%;
+    z-index: 10;
+    width: 40vw;
+    height: 4vh;
+    border: 2px solid #ff0055;
+    background-color: #000;
+    font-size: 1rem;
+    color: #ffffff;
+    text-align: center;
+    padding: 3rem;
+  }
 </style>
 
 {#if pageloadUI}
+
+{#if alertDialog}
+  <div class="alert-dialog">
+    Please provide a CR table selection before proceeding.
+    <button id="alert-close" on:click="{() => closeDialog()}">X</button>
+  </div>
+{/if}
+
 <div id="page-ui-wrapper">
   <div id="selection-wrapper">
     <div id="CRWrapper" class="choiceWrapper">
       <p id="tableTitle" class="section-title">Challenge Rating</p>
       <div class="input-wrapper">
         <div class="centering-input-wrapper">
-          {#each CRMenu as cr (cr.id)}
           <div class="input-div">
-            <input
-              type=radio
-              bind:group={CRMenu.selected} 
-              value={cr.id}
-            >
-            <span>{cr.choice}</span>
+            <form id="crForm">
+            {#each CRMenu as cr (cr.id)}
+              <div class="radio-wrap">
+                <input
+                  class=radioInput{cr.id+1}
+                  type=radio
+                  bind:group={selectedCR}
+                  id=radio{cr.id}
+                  value={cr.value}
+                ><label class=radioInput{cr.id+1} for=radio{cr.id}>{cr.choice}</label>
+              </div>
+            {/each}
+            </form>
           </div>
-          {/each}
         </div>
       </div>
     </div>
   </div>
+  
   <div id="tableDiv">
     <p id="typeTitle" class="section-title">Selection</p>
     <div id="table-wrapper">
@@ -267,6 +328,7 @@
       </div>
     </div>
   </div>
+
   <button id="fwdToRollBtn" class="navBtn" 
   on:click="{() => proceedToTableSelection()}"
   >
@@ -276,12 +338,13 @@
 {/if}
 
 {#if rollForm}
-<div id="lootTableDiv">
-  <LootTables />
+<div class="rollFormAppDiv">
+  <ItemTable />
 </div>
 
-<button id="backToPageloadBtn" class="navBtn"
-on:click="{() => backToPageloadUI()}">
-  Back
-</button>
+<div id="backToPageload">
+  <button id="backToPageloadBtn" class="navBtn" on:click="{() => backToPageloadUI()}">
+    Back
+  </button>
+</div>
 {/if}

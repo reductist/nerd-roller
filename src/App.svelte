@@ -3,7 +3,6 @@
 </svelte:head>
 <script>
 	import Title from './Title.svelte'
-	import LootTables from './LootTables.svelte'
 	import PageUI from './PageUI.svelte'
 </script>
 
@@ -22,9 +21,7 @@
 
 <div id='wrapper'>
 	
-	<Title />
-	
-	<PageUI>
-	</PageUI>
+	<Title></Title>
+	<PageUI />
 	
 </div>
