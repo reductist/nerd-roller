@@ -23,8 +23,8 @@
     if (selectedCR) {
       pageloadUI = false;
       rollForm = true;
-      console.log(getCrCoins(selectedCR));
-      console.log(getCrItems(selectedCR));
+      console.log(extractCrCoins(selectedCR));
+      console.log(extractCrItems(selectedCR));
     } else {
       alertDialog = true;
     }
@@ -43,17 +43,41 @@
   const prependItemString = (cr) => `hoardTreasure${cr}`;
   const prependCoinString = (cr) => `coins${cr}`;
   // return table identifier from user's radio button selection
-  function getCrCoins(cr) {
-    return hoardCoinsTables.coinHoard[prependCoinString(cr)];
+  const getKeys = (obj) => {
+    return Object.keys(obj);
   }
-  function getCrItems(cr) {
+  const getVals = (obj) => {
+    return Object.values(obj);
+  }
+  const extractCrCoins = (cr) => {
+    let coinObj = hoardCoinsTables.coinHoard[prependCoinString(cr)];
+    let coinVals = coinObj[0];
+    return getVals(coinVals);
+  }
+  const extractCrCoinsKeys = (cr) => {
+    let coinObj = hoardCoinsTables.coinHoard[prependCoinString(cr)];
+    let coinEntries = Object.values(coinObj)[0];
+    let coinKeys = Object.keys(coinEntries);
+    return coinKeys;
+  }
+  const extractItemVals = (cr) => {
+    let itemObj = hoardTreasureTables[prependItemString(cr)];
+    let itemVals = itemObj.map( el => Object.values(el));
+    return itemVals;
+  }
+  const extractCrItems = (cr) => {
     return hoardTreasureTables[prependItemString(cr)];
   }
+
+  $: selectedCoins = (selectedCR) ? extractCrCoins(selectedCR) : false;
+  $: selectedCoinKeys = (selectedCR) ? extractCrCoinsKeys(selectedCR) : false;
+  $: selectedItems = (selectedCR) ? extractCrItems(selectedCR) : false;
+  $: selectedItemVals = (selectedCR) ? extractItemVals(selectedCR) : false;
 </script>
 
 <style>
   #page-ui-wrapper {
-    grid-template-columns: 0.05fr auto 0.1fr auto 0.05fr;
+    grid-template-columns: 0.05fr 3fr 0.5fr 6fr 0.05fr;;
     font-family: 'Fira Sans';
     font-weight: 100;
     line-height: 2;
@@ -69,16 +93,16 @@
     font-family: 'Overpass Mono', monospace;
     font-size: calc(10px + 1vw);
     font-weight: 100;
-    width: fit-content;
-    min-width: 25vw;
+    width: -webkit-fill-available;
     justify-self: center;
   }
   #tableDiv {
     grid-column: 4;
     grid-row: 2;
     background-color: #090c16;
+    width: -webkit-fill-available;
   }
-  #table-wrapper {
+  .table-wrapper {
     padding: 0.5rem 1rem 1rem 1rem;
     grid-row: 2;
     background-color: #090c16;
@@ -133,7 +157,10 @@
   .radio-wrap {
     display: block;
     text-align: justify;
-    margin: 0 auto;
+    background: #000;
+    padding-left: 1.5rem;
+    border: 1px solid #4a4b4f;
+    border-collapse: collapse;
   }
   .radioInput2 {
     grid-column: 1;
@@ -180,28 +207,78 @@
     margin: 0 auto;
     text-align: center;
   }
-  table {
-    border-collapse: collapse;
-    border: 1px solid #fff;
-    font-family: 'Share Tech Mono';
+  .table-title {
     font-weight: 100;
+    font-size: 2rem;
+    border: 1px solid #c78fef;
+    border-collapse: collapse;
+    width: 95%;
+    color: #c78fef;
+    background: #060909;
+    text-align: center;
+    line-height: 1.8;
+  }
+  .table-content {
+    width: 95%;
+  }
+  table {
+    font-weight: 100;
+    color: #1a1c23;
+    background-color: #efeff6;
+    margin-bottom: 4rem;
+    border-collapse: collapse;
+    font-family: 'Share Tech Mono';
+    table-layout: fixed;
+    width: 100%;
   }
   thead {
     font-size: 1.5rem;
     font-family: 'Fira Sans Extra Condensed';
-    background: #000;
+    background: #0d0d0f;
+    border: 1px solid #fff;
+    border-top: none;
   }
   tbody {
     font-size: 0.8rem;
     font-weight: 100;
     background-color: #2f3137;
     color: #fff;
+    border: 1px solid #fff;
     font-family: 'Share Tech Mono';
   }
+  .item-tbody {
+    font-size: 0.75rem;
+  }
+  th {
+    padding: 5px 1px 5px 10px;
+    background: #2d2f3a;
+    color: #fff;
+    border: 0.5px solid #8a8d92;
+    border-top: none;
+    font-family: 'Fira Code';
+    font-size: 1rem;
+    text-align: left;
+  }
+  .item-header-1 {
+    width: 10%;
+  }
+  .item-header-2 {
+    width: 25%;
+  }
+  tr:nth-child(even) {
+    background: #9a9da733;
+  }
   td {
-    padding: 0.2rem 1rem 0.1rem 1rem;
-    text-align: right;
-    border: 1px solid #666;
+    padding: 5px 1px 5px 10px;
+    border: 0.5px solid #666;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  .coin-tbody {
+    font-size: 0.9rem;
+  }
+  .item-tbody {
+    font-size: 0.7rem;
   }
   .alert-dialog {
     position: absolute;
@@ -256,77 +333,60 @@
   
   <div id="tableDiv">
     <p id="typeTitle" class="section-title">Selection</p>
-    <div id="table-wrapper">
-      <div id="table-title">
-        table title goes here
-      </div>
-      <div id="table-content">
-        <table>
-	        <thead>
-              <tr>
-              <td>one</td>
-              <td>two</td>
-              <td>three</td><td>four</td></tr>
+    <div class="table-wrapper coin-table-wrapper">
+      {#if selectedCR}
+        <div class="table-title">
+          Coins (CR{(selectedCR)})
+        </div>
+      {/if}
+      <div class="table-content">
+        {#if selectedCoins}
+          <table class=coin-table>
+            <thead>
+              {#each selectedCoinKeys as keys}
+                <th>{keys}</th>
+              {/each}
             </thead>
-          <tbody>
-            <tr>
-              <td>dat1</td>
-              <td>dat2</td>
-              <td>dat3</td>
-              <td>dat4</td>
-            </tr>
-            <tr>
-              <td>dat1</td>
-              <td>dat2</td>
-              <td>dat3</td>
-              <td>dat4</td>
-            </tr>
-            <tr>
-              <td>dat1</td>
-              <td>dat2</td>
-              <td>dat3</td>
-              <td>dat4</td>
-            </tr>
-            <tr>
-              <td>dat1</td>
-              <td>dat2</td>
-              <td>dat3</td>
-              <td>dat4</td>
-            </tr>
-            <tr>
-              <td>dat1</td>
-              <td>dat2</td>
-              <td>dat3</td>
-              <td>dat4</td>
-            </tr>
-            <tr>
-              <td>dat1</td>
-              <td>dat2</td>
-              <td>dat3</td>
-              <td>dat4</td>
-            </tr>
-            <tr>
-              <td>dat1</td>
-              <td>dat2</td>
-              <td>dat3</td>
-              <td>dat4</td>
-            </tr>
-            <tr>
-              <td>dat1</td>
-              <td>dat2</td>
-              <td>dat3</td>
-              <td>dat4</td>
-            </tr>
-            <tr>
-              <td>dat1</td>
-              <td>dat2</td>
-              <td>dat3</td>
-              <td>dat4</td>
-            </tr>
-          </tbody>
-        </table>
+            <tbody class="coin-tbody">
+              <tr>
+                {#each selectedCoins as coins}
+                  <td>{coins}</td>
+                {/each}
+              </tr>
+            </tbody>
+          </table>
+        {/if}
       </div>
     </div>
+
+    <div class="table-wrapper item-table-wrapper">
+      {#if selectedCR}
+        <div class="table-title">
+          Coins (CR{(selectedCR)})
+        </div>
+      {/if}
+      <div class="table-content">
+        {#if selectedCoins}
+          <table class="item-table">
+            <thead>
+              <th class="item-header-1">range</th>
+              <th class="item-header-2">loot</th>
+              <th class="item-header-3">magic_items</th>
+            </thead>
+            <tbody class="item-tbody">
+              {#each selectedItemVals as items}
+                <tr>
+                  {#each items as item}
+                  <td>{item}</td>
+                  {/each}
+                </tr>
+              {/each}
+            </tbody>
+          </table>
+        {/if}
+      </div>
+    </div>
+  
   </div>
 
   <button id="fwdToRollBtn" class="navBtn" 
