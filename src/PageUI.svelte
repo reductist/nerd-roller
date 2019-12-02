@@ -131,7 +131,7 @@
     grid-row: 2;
     background-color: #090c16;
     display: grid;
-    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-rows: 30px 2fr 1fr;
   }
   .centering-input-wrapper {
     grid-column: 1 / -1;
@@ -145,7 +145,7 @@
     font-weight: 200;
     font-size: calc(12px + 0.8vw);
     color: #c78fef;
-    padding: 1rem 2rem 1rem 2rem;
+    padding: 0 2rem 1rem 2rem;
     text-align: justify;
     align-self: center;
   }
@@ -203,6 +203,27 @@
     color: #c78fef;
     background: #000;
   }
+  #alert-close {
+    font-size: 2rem;
+    background: #00000000;
+    transform: scaleX(1.5);
+    transition: all 500ms ease-in-out 250ms;
+    width: 90px;
+    border: none;
+    display: inline-flex;
+    padding: 0;
+    float: right;
+    justify-content: center;
+    color: #fff;
+    line-height: 0.6;
+    font-family: cursive;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+  #alert-close:hover {
+    color: #ff0076;
+    transform: scale3d(2.5,2,1) rotate(180deg);
+    transform-origin: center;
+  }
   #backToPageload {
     margin: 0 auto;
     text-align: center;
@@ -241,8 +262,6 @@
   tbody {
     font-size: 0.8rem;
     font-weight: 100;
-    background-color: #2f3137;
-    color: #fff;
     border: 1px solid #fff;
     font-family: 'Share Tech Mono';
   }
@@ -362,11 +381,11 @@
     <div class="table-wrapper item-table-wrapper">
       {#if selectedCR}
         <div class="table-title">
-          Coins (CR{(selectedCR)})
+          Treasure (CR{(selectedCR)})
         </div>
       {/if}
       <div class="table-content">
-        {#if selectedCoins}
+        {#if selectedItems}
           <table class="item-table">
             <thead>
               <th class="item-header-1">range</th>

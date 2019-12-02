@@ -1,25 +1,25 @@
 const itemTableA = [{
-  "d100": "0150",
+  "d100": "01-50",
   "Magic Item": "Potion of healing"
 },
 {
-  "d100": "5160",
+  "d100": "51-60",
   "Magic Item": "Spell scroll (cantrip)"
 },
 {
-  "d100": "6170",
+  "d100": "61-70",
   "Magic Item": "Potion of climbing"
 },
 {
-  "d100": "7190",
+  "d100": "71-90",
   "Magic Item": "Spell scroll (1st level)"
 },
 {
-  "d100": "9194",
+  "d100": "91-94",
   "Magic Item": "Spell scroll (2nd level)"
 },
 {
-  "d100": "9598",
+  "d100": "95-98",
   "Magic Item": "Potion of greater healing"
 },
 {
@@ -33,75 +33,75 @@ const itemTableA = [{
 ];
 
 const itemTableB = [{
-  "d100": "0115",
+  "d100": "01-15",
   "Magic Item": "Potion of greater healing"
 },
 {
-  "d100": "1622",
+  "d100": "16-22",
   "Magic Item": "Potion of fire breath"
 },
 {
-  "d100": "2329",
+  "d100": "23-29",
   "Magic Item": "Potion of resistance"
 },
 {
-  "d100": "3034",
+  "d100": "30-34",
   "Magic Item": "Ammunition, +1"
 },
 {
-  "d100": "3539",
+  "d100": "35-39",
   "Magic Item": "Potion of animal friendship"
 },
 {
-  "d100": "4044",
+  "d100": "40-44",
   "Magic Item": "Potion of hill giant strength"
 },
 {
-  "d100": "4549",
+  "d100": "45-49",
   "Magic Item": "Potion of growth"
 },
 {
-  "d100": "5054",
+  "d100": "50-54",
   "Magic Item": "Potion of water breathing"
 },
 {
-  "d100": "5559",
+  "d100": "55-59",
   "Magic Item": "Spell scroll (2nd level)"
 },
 {
-  "d100": "6064",
+  "d100": "60-64",
   "Magic Item": "Spell scroll (3rd level)"
 },
 {
-  "d100": "6567",
+  "d100": "65-67",
   "Magic Item": "Bag of holding"
 },
 {
-  "d100": "6870",
+  "d100": "68-70",
   "Magic Item": "Keoghtom's ointment"
 },
 {
-  "d100": "7173",
+  "d100": "71-73",
   "Magic Item": "Oil of slipperiness"
 },
 {
-  "d100": "7475",
+  "d100": "74-75",
   "Magic Item": "Dust of disappearance"
 },
 {
-  "d100": "7677",
+  "d100": "76-77",
   "Magic Item": "Dust of dryness"
 },
 {
-  "d100": "7879",
+  "d100": "78-79",
   "Magic Item": "Dust of sneezing and choking"
 },
 {
-  "d100": "8081",
+  "d100": "80-81",
   "Magic Item": "Elemental gem"
 },
 {
-  "d100": "8283",
+  "d100": "82-83",
   "Magic Item": "Philter of love"
 },
 {
@@ -175,75 +175,75 @@ const itemTableB = [{
 ];
 
 const itemTableC = [{
-  "d100": "0115",
+  "d100": "01-15",
   "Magic Item": "Potion of superior healing"
 },
 {
-  "d100": "1622",
+  "d100": "16-22",
   "Magic Item": "Spell scroll (4thlevel)"
 },
 {
-  "d100": "2327",
+  "d100": "23-27",
   "Magic Item": "Ammunition, +2"
 },
 {
-  "d100": "2832",
+  "d100": "28-32",
   "Magic Item": "Potion of clairvoyance"
 },
 {
-  "d100": "3337",
+  "d100": "33-37",
   "Magic Item": "Potion of diminution"
 },
 {
-  "d100": "3842",
+  "d100": "38-42",
   "Magic Item": "Potion of gaseous form"
 },
 {
-  "d100": "4347",
+  "d100": "43-47",
   "Magic Item": "Potion of frost giant strength"
 },
 {
-  "d100": "4852",
+  "d100": "48-52",
   "Magic Item": "Potion of stone giant strength"
 },
 {
-  "d100": "5357",
+  "d100": "53-57",
   "Magic Item": "Potion of heroism"
 },
 {
-  "d100": "5862",
+  "d100": "58-62",
   "Magic Item": "Potion of invulnerability"
 },
 {
-  "d100": "6367",
+  "d100": "63-67",
   "Magic Item": "Potion of mind reading"
 },
 {
-  "d100": "6872",
+  "d100": "68-72",
   "Magic Item": "Spell scroll (5thlevel)"
 },
 {
-  "d100": "7375",
+  "d100": "73-75",
   "Magic Item": "Elixir of health"
 },
 {
-  "d100": "7678",
+  "d100": "76-78",
   "Magic Item": "Oil of etherealness"
 },
 {
-  "d100": "7981",
+  "d100": "79-81",
   "Magic Item": "Potion of fire giant strength"
 },
 {
-  "d100": "8284",
+  "d100": "82-84",
   "Magic Item": "Quaal's feather token"
 },
 {
-  "d100": "8587",
+  "d100": "85-87",
   "Magic Item": "Scroll of protection"
 },
 {
-  "d100": "8889",
+  "d100": "88-89",
   "Magic Item": "Bag of beans"
 },
 {
@@ -289,59 +289,59 @@ const itemTableC = [{
 ];
 
 const itemTableD = [{
-  "d100": "0120",
+  "d100": "01-20",
   "Magic Item": "Potion of supreme healing"
 },
 {
-  "d100": "2130",
+  "d100": "21-30",
   "Magic Item": "Potion of invisibility"
 },
 {
-  "d100": "3140",
+  "d100": "31-40",
   "Magic Item": "Potion of speed"
 },
 {
-  "d100": "4150",
+  "d100": "41-50",
   "Magic Item": "Spell scroll (6thlevel)"
 },
 {
-  "d100": "5157",
+  "d100": "51-57",
   "Magic Item": "Spell scroll (7thlevel)"
 },
 {
-  "d100": "5862",
+  "d100": "58-62",
   "Magic Item": "Ammunition, +3"
 },
 {
-  "d100": "6367",
+  "d100": "63-67",
   "Magic Item": "Oil of sharpness"
 },
 {
-  "d100": "6872",
+  "d100": "68-72",
   "Magic Item": "Potion of flying"
 },
 {
-  "d100": "7377",
+  "d100": "73-77",
   "Magic Item": "Potion of cloud giant strength"
 },
 {
-  "d100": "7882",
+  "d100": "78-82",
   "Magic Item": "Potion of longevity"
 },
 {
-  "d100": "8387",
+  "d100": "83-87",
   "Magic Item": "Potion of vitality"
 },
 {
-  "d100": "8892",
+  "d100": "88-92",
   "Magic Item": "Spell scroll (8thlevel)"
 },
 {
-  "d100": "9395",
+  "d100": "93-95",
   "Magic Item": "Horseshoes of a zephyr"
 },
 {
-  "d100": "9698",
+  "d100": "96-98",
   "Magic Item": "Nolzur's marvelous pigments"
 },
 {
@@ -355,27 +355,27 @@ const itemTableD = [{
 ];
 
 const itemTableE = [{
-  "d100": "0130",
+  "d100": "01-30",
   "Magic Item": "Spell scroll (8thlevel)"
 },
 {
-  "d100": "3155",
+  "d100": "31-55",
   "Magic Item": "Potion of storm giant strength"
 },
 {
-  "d100": "5670",
+  "d100": "56-70",
   "Magic Item": "Poti on of supreme healing"
 },
 {
-  "d100": "7185",
+  "d100": "71-85",
   "Magic Item": "Spell scroll (9st level)"
 },
 {
-  "d100": "8693",
+  "d100": "86-93",
   "Magic Item": "Universal solvent"
 },
 {
-  "d100": "9498",
+  "d100": "94-98",
   "Magic Item": "Arrow of slaying"
 },
 {
@@ -385,75 +385,75 @@ const itemTableE = [{
 ];
 
 const itemTableF = [{
-  "d100": "0115",
+  "d100": "01-15",
   "Magic Item": "Weapon, +1"
 },
 {
-  "d100": "1618",
+  "d100": "16-18",
   "Magic Item": "Shield,+ 1"
 },
 {
-  "d100": "1921",
+  "d100": "19-21",
   "Magic Item": "Sentinel shield"
 },
 {
-  "d100": "2223",
+  "d100": "22-23",
   "Magic Item": "Amulet of proof against detection and location"
 },
 {
-  "d100": "2425",
+  "d100": "24-25",
   "Magic Item": "Boots of elvenkind"
 },
 {
-  "d100": "2627",
+  "d100": "26-27",
   "Magic Item": "Boots of striding and springing"
 },
 {
-  "d100": "2729",
+  "d100": "27-29",
   "Magic Item": "Bracers of archery"
 },
 {
-  "d100": "3031",
+  "d100": "30-31",
   "Magic Item": "Brooch of shielding"
 },
 {
-  "d100": "3233",
+  "d100": "32-33",
   "Magic Item": "Broom of flying"
 },
 {
-  "d100": "3435",
+  "d100": "34-35",
   "Magic Item": "Cloak of elvenkind"
 },
 {
-  "d100": "3637",
+  "d100": "36-37",
   "Magic Item": "Cloak of protection"
 },
 {
-  "d100": "3839",
+  "d100": "38-39",
   "Magic Item": "Gauntlets of ogre power"
 },
 {
-  "d100": "4041",
+  "d100": "40-41",
   "Magic Item": "Hat of disguise"
 },
 {
-  "d100": "4243",
+  "d100": "42-43",
   "Magic Item": "Javelin of lightning"
 },
 {
-  "d100": "4445",
+  "d100": "44-45",
   "Magic Item": "Pearl of power"
 },
 {
-  "d100": "4647",
+  "d100": "46-47",
   "Magic Item": "Rod of the pact keeper, + 1"
 },
 {
-  "d100": "4849",
+  "d100": "48-49",
   "Magic Item": "Slippers of spider climbing"
 },
 {
-  "d100": "5051",
+  "d100": "50-51",
   "Magic Item": "Staff of the adder"
 },
 {
@@ -465,19 +465,19 @@ const itemTableF = [{
   "Magic Item": "Sword of vengeance"
 },
 {
-  "d100": "5657",
+  "d100": "56-57",
   "Magic Item": "Trident of fish command"
 },
 {
-  "d100": "5859",
+  "d100": "58-59",
   "Magic Item": "Wand of magic missiles"
 },
 {
-  "d100": "6061",
+  "d100": "60-61",
   "Magic Item": "Wand of the war mage, + 1"
 },
 {
-  "d100": "6263",
+  "d100": "62-63",
   "Magic Item": "Wand of web"
 },
 {
@@ -627,11 +627,11 @@ const itemTableF = [{
 ];
 
 const itemTableG = [{
-  "d100": "0111",
+  "d100": "01-11",
   "Magic Item": "Weapon, +2"
 },
 {
-  "d100": "1214",
+  "d100": "12-14",
   "Magic Item": "Figurine of wondrous power (roll d8)"
 },
 {
@@ -1009,75 +1009,75 @@ const itemTableG = [{
 ];
 
 const itemTableH = [{
-  "d100": "0110",
+  "d100": "01-10",
   "Magic Item": "Weapon, +3"
 },
 {
-  "d100": "1112",
+  "d100": "11-12",
   "Magic Item": "Amulet of the planes"
 },
 {
-  "d100": "1314",
+  "d100": "13-14",
   "Magic Item": "Carpet of flying"
 },
 {
-  "d100": "1516",
+  "d100": "15-16",
   "Magic Item": "Crystal ball (very rare version)"
 },
 {
-  "d100": "1718",
+  "d100": "17-18",
   "Magic Item": "Ring of regeneration"
 },
 {
-  "d100": "1920",
+  "d100": "19-20",
   "Magic Item": "Ring of shooting stars"
 },
 {
-  "d100": "2122",
+  "d100": "21-22",
   "Magic Item": "Ring of telekinesis"
 },
 {
-  "d100": "2324",
+  "d100": "23-24",
   "Magic Item": "Robe of scintillating colors"
 },
 {
-  "d100": "2526",
+  "d100": "25-26",
   "Magic Item": "Robe of stars"
 },
 {
-  "d100": "2728",
+  "d100": "27-28",
   "Magic Item": "Rod of absorption"
 },
 {
-  "d100": "2930",
+  "d100": "29-30",
   "Magic Item": "Rod of alertness"
 },
 {
-  "d100": "3132",
+  "d100": "31-32",
   "Magic Item": "Rod of security"
 },
 {
-  "d100": "3334",
+  "d100": "33-34",
   "Magic Item": "Rod of the pact keeper, +3"
 },
 {
-  "d100": "3536",
+  "d100": "35-36",
   "Magic Item": "Scimitar of speed"
 },
 {
-  "d100": "3738",
+  "d100": "37-38",
   "Magic Item": "Shield, +3"
 },
 {
-  "d100": "3940",
+  "d100": "39-40",
   "Magic Item": "Staff of fire"
 },
 {
-  "d100": "4142",
+  "d100": "41-42",
   "Magic Item": "Staff of frost"
 },
 {
-  "d100": "4344",
+  "d100": "43-44",
   "Magic Item": "Staff of power"
 },
 {
@@ -1089,15 +1089,15 @@ const itemTableH = [{
   "Magic Item": "Staff of thunder and lightning"
 },
 {
-  "d100": "4950",
+  "d100": "49-50",
   "Magic Item": "Sword of sharpnes"
 },
 {
-  "d100": "5152",
+  "d100": "51-52",
   "Magic Item": "Wand of polymorph"
 },
 {
-  "d100": "5354",
+  "d100": "53-54",
   "Magic Item": "Wand of the war mage, + 3"
 },
 {
@@ -1287,67 +1287,67 @@ const itemTableH = [{
 ];
 
 const itemTableI = [{
-  "d100": "0105",
+  "d100": "01-05",
   "Magic Item": "Defender"
 },
 {
-  "d100": "0610",
+  "d100": "06-10",
   "Magic Item": "Hammer of thunderbolts"
 },
 {
-  "d100": "1115",
+  "d100": "11-15",
   "Magic Item": "Luck Blade"
 },
 {
-  "d100": "1620",
+  "d100": "16-20",
   "Magic Item": "Sword of answering"
 },
 {
-  "d100": "2123",
+  "d100": "21-23",
   "Magic Item": "Holy avenger"
 },
 {
-  "d100": "2426",
+  "d100": "24-26",
   "Magic Item": "Ring of djinni summoning"
 },
 {
-  "d100": "2729",
+  "d100": "27-29",
   "Magic Item": "Ring of invisibility"
 },
 {
-  "d100": "3032",
+  "d100": "30-32",
   "Magic Item": "Ring of spell turning"
 },
 {
-  "d100": "3638",
+  "d100": "36-38",
   "Magic Item": "Rod of lordly might"
 },
 {
-  "d100": "3941",
+  "d100": "39-41",
   "Magic Item": "Vorpal sword"
 },
 {
-  "d100": "4243",
+  "d100": "42-43",
   "Magic Item": "Belt of cloud giant strength"
 },
 {
-  "d100": "4445",
+  "d100": "44-45",
   "Magic Item": "Armor, +2 breastplate"
 },
 {
-  "d100": "4647",
+  "d100": "46-47",
   "Magic Item": "Armor, +3 chain mail"
 },
 {
-  "d100": "4849",
+  "d100": "48-49",
   "Magic Item": "Armor, +3 chain shirt"
 },
 {
-  "d100": "5051",
+  "d100": "50-51",
   "Magic Item": "Cloak of invisibility"
 },
 {
-  "d100": "5253",
+  "d100": "52-53",
   "Magic Item": "Crystal ball (legendary version)"
 },
 {
