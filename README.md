@@ -2,9 +2,9 @@
 
 ---
 
-# svelte app
+# 5e D&D Loot-Roller App
 
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/reductist/loot-app.
+This is a project template for a [Svelte](https://svelte.dev) app for my buds. It lives at https://github.com/reductist/loot-app.
 
 To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
 
