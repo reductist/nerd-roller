@@ -38,6 +38,10 @@
         background: #060909;
         text-align: center;
       }
+      #table-wrapper {
+        overflow-y: scroll;
+        max-height: 50vh;
+      }
       table {
         font-family: 'Overpass Mono';
         font-weight: 100;
@@ -107,6 +111,7 @@
     </div>
     
     {#if viewState}
+    <div id="table-wrapper">
       <table id="item-table">
         <thead id="item-table-header">
           <th>range_low</th>
@@ -143,4 +148,5 @@
         {/each}
         </tbody>
       </table>
+    </div>
     {/if}
