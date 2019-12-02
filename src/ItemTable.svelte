@@ -81,6 +81,14 @@
         text-align: right;
         padding-right: 15px;
       }
+      #item-table-header {
+        position: sticky;
+        top: 0;
+        display: inherit;
+        flex-flow: row;
+        flex-direction: row;
+        width: 91vw;
+      }
       .rollFormAppDiv {
         display: block;
         width: 100%;
@@ -99,10 +107,12 @@
     </div>
     
     {#if viewState}
-      <table>
-        <th>range_low</th>
-        <th>range_high</th>
-        <th>item</th>
+      <table id="item-table">
+        <thead id="item-table-header">
+          <th>range_low</th>
+          <th>range_high</th>
+          <th>item</th>
+        </thead>
         <tbody>
         {#each getTable(viewState) as item, i}
           <tr>
