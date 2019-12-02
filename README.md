@@ -1,16 +1,16 @@
-*Psst  looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
+*Psst Â looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
 
 ---
 
 # svelte app
 
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
+This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/reductist/loot-app.
 
 To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
 
 ```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
+npx degit reductist/loot-app
+cd loot-app
 ```
 
 *Note that you will need to have [Node.js](https://nodejs.org) installed.*
@@ -21,7 +21,7 @@ cd svelte-app
 Install the dependencies...
 
 ```bash
-cd svelte-app
+cd loot-app
 npm install
 ```
 
@@ -33,7 +33,7 @@ npm run dev
 
 Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
 
-By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
+By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`. I typically either run `HOST=0.0.0.0 PORT=2323 npm run dev` or specify the same within package.json; `sirv public -H 0.0.0.0 -p 2323`.
 
 
 ## Building and running in production mode
