@@ -204,6 +204,7 @@
     background: #000;
   }
   #alert-close {
+    cursor: pointer;
     font-size: 2rem;
     background: #00000000;
     transform: scaleX(1.5);
@@ -304,7 +305,6 @@
     left: 30%;
     top: 63%;
     z-index: 10;
-    cursor: pointer;
     width: 40vw;
     height: 4vh;
     border: 2px solid #ff0055;
