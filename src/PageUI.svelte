@@ -304,6 +304,7 @@
     left: 30%;
     top: 63%;
     z-index: 10;
+    cursor: pointer;
     width: 40vw;
     height: 4vh;
     border: 2px solid #ff0055;
